@@ -30,7 +30,7 @@ example, mainly the sklearn datasets and matplotlib for ploting.
       import pandas as pd
       import matplotlib.pyplot as plt
 
-      from HiPart.clustering import dePDDP
+      from HiPart.clustering import DePDDP
       from HiPart import visualizations as hvs
 
       from sklearn.datasets import make_blobs
@@ -62,9 +62,9 @@ parameters respectively.
 
       data = load_iris()
       Y = data.target
-      X = data.data 
+      X = data.data
 
-      clustered_class = dePDDP(max_clusters_number=3, bandwidth_scale=0.5, percentile=0.2, min_sample_split=5)
+      clustered_class = DePDDP(max_clusters_number=3, bandwidth_scale=0.5, percentile=0.2, min_sample_split=5)
 
       clu_res = clustered_class.fit(X)
 
@@ -103,7 +103,7 @@ to split further a leaf node from the previous clustering result.
 
    .. code:: python
 
-      clustered_class = dePDDP(max_clusters_number=5, bandwidth_scale=0.5, percentile=0.2, min_sample_split=5)
+      clustered_class = DePDDP(max_clusters_number=5, bandwidth_scale=0.5, percentile=0.2, min_sample_split=5)
 
       clu_res = clustered_class.fit(X)
       m = hvs.split_visualization(clu_res)
@@ -141,7 +141,7 @@ reasonable estimate for the number of cluster in this example.
 
       X, y = make_blobs(n_samples=1500, centers=6, random_state=0)
 
-      clustered_class = dePDDP(bandwidth_scale=1.5)
+      clustered_class = DePDDP(bandwidth_scale=1.5)
 
       # get only the predicted class
       clu_res = clustered_class.fit_predict(X)
@@ -182,9 +182,9 @@ iterative procedure.
 
       data = load_linnerud()
       Y = data.target
-      X = data.data 
+      X = data.data
 
-      clustered_class = dePDDP(max_clusters_number=3, bandwidth_scale=0.5, percentile=0.1, min_sample_split=1)
+      clustered_class = DePDDP(max_clusters_number=3, bandwidth_scale=0.5, percentile=0.1, min_sample_split=1)
 
       clu_res = clustered_class.fit(X)
       m = hvs.dendrogram_visualization(clu_res)
@@ -214,7 +214,7 @@ clusters to make the comparison more interesting.
 
    .. code:: python
 
-      from HiPart.clustering import iPDDP
+      from HiPart.clustering import IPDDP
       from sklearn.cluster import AgglomerativeClustering
       from sklearn.cluster import KMeans
       import time
@@ -226,7 +226,7 @@ clusters to make the comparison more interesting.
 
       # --------------
       # set the model
-      clustered_class = iPDDP(max_clusters_number=7, percentile=0.1, min_sample_split=5)
+      clustered_class = IPDDP(max_clusters_number=7, percentile=0.1, min_sample_split=5)
 
       st = time.time()
       iPDDP_res = clustered_class.fit_predict(X)
