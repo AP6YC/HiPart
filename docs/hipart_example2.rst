@@ -72,7 +72,7 @@ define a custom function (``h5file()``) for data loading.
 1.3 Clustering of the data
 --------------------------
 
-The algorithm we will use to cluster the Canser dataset is the dePDDP
+The algorithm we will use to cluster the Cancer dataset is the dePDDP
 algorithm. The only parametrization we will do to the algorithm is the
 number of times we want the data to be split with the
 ``max_clusters_number`` parameter.
@@ -213,7 +213,7 @@ subplot is the axes ``labels``.
 
       # Dendrogram subplot
       dendro = plt.subplot(gs[0:24, 0:1]) # use the first 25 row of the
-                                          # grid for the denro axes 
+                                          # grid for the denro axes
       hierarchy.set_link_color_palette(color_list) # use the color palet we created
       den_data = viz.dendrogram_visualization(
           clustering,
@@ -231,8 +231,8 @@ subplot is the axes ``labels``.
 
       # create the purity line
       labels = plt.subplot(gs[24:26, 0:1]) # use the first 1 row of the
-                                           # grid for the denro axes 
-      labels.scatter(  # labels subplot creation with the use of a scater plot 
+                                           # grid for the denro axes
+      labels.scatter(  # labels subplot creation with the use of a scater plot
           np.arange(X.shape[0]),
           np.zeros(X.shape[0]),
           s=65,
