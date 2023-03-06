@@ -235,7 +235,7 @@ clusters to make the comparison more interesting.
 
       # --------------
       # set the model
-      Agglo_model = AgglomerativeClustering(n_clusters=7,linkage='average')
+      Agglo_model = AgglomerativeClustering(n_clusters=7, linkage='average')
 
       st = time.time()
       Agglo_res = Agglo_model.fit_predict(X)
@@ -244,7 +244,7 @@ clusters to make the comparison more interesting.
 
       # --------------
       # set the model
-      kmeans_model = KMeans(n_clusters=7, random_state=0 )
+      kmeans_model = KMeans(n_clusters=7, random_state=0, n_init=1)
 
       st = time.time()
       kmeans_res = kmeans_model.fit_predict(X)
