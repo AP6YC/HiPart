@@ -23,6 +23,15 @@ dataset, which can be found in the package
 1.1 Initialization
 ------------------
 
+.. note::
+
+   This example requires the additional installation the `h5py` and `seaborn` packages that are not bundled with `HiPart`.
+   They can be installed with `pip` in the usual manner:
+
+   .. code-block:: shell
+
+      pip install h5py seaborn
+
 We begin with the needed modules for the example.
 
 .. container:: cell
